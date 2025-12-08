@@ -8,7 +8,7 @@ import {
   User, StopCircle, AlertCircle, FileText, MessageSquare, RotateCcw, 
   Share2, Clock, Maximize2, Minimize2, Command 
 } from 'lucide-react';
-import { motion, AnimatePresence, Variants, spring } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 // TOAST COMPONENT
 const Toast = ({ message, type, onClose }: { message: string, type: 'success' | 'error' | 'info', onClose: () => void }) => {
@@ -38,7 +38,7 @@ const Toast = ({ message, type, onClose }: { message: string, type: 'success' | 
 };
 
 // ANIMATIONS - FIXED
-cconst fadeInUp: Variants = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
