@@ -44,7 +44,6 @@ const fadeInUp: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring" as const,   // <- important
       bounce: 0.4,
       duration: 0.8,
     },
@@ -68,7 +67,6 @@ const scaleUp: Variants = {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring" as const,
         stiffness: 200,
         damping: 10,
       },
