@@ -38,41 +38,41 @@ const Toast = ({ message, type, onClose }: { message: string, type: 'success' | 
 };
 
 // ANIMATIONS - FIXED
-const fadeInUp: Variants = {
+cconst fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      type: "spring" as const,
-      bounce: 0.4, 
-      duration: 0.8 
-    } 
-  }
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring" as const,   // <- important
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
 };
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
-  visible: { 
-    opacity: 1, 
-    transition: { 
-      staggerChildren: 0.15, 
-      delayChildren: 0.2 
-    } as const 
-  }
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
 };
 
 const scaleUp: Variants = {
   hidden: { scale: 0.8, opacity: 0 },
-  visible: { 
-    scale: 1, 
-    opacity: 1, 
-    transition: { 
-      type: "spring" as const,
-      stiffness: 200, 
-      damping: 10 
-    } 
-  }
+  visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 200,
+        damping: 10,
+      },
+  },
 };
 
 export default function Home() {
