@@ -13,6 +13,7 @@
     "@ai-sdk/react": "^2.0.109",
     "@google/generative-ai": "^0.24.1",
     "ai": "^5.0.108",
+    "framer-motion": "^12.23.25",
     "lucide-react": "^0.556.0",
     "next": "16.0.7",
     "react": "19.2.0",
