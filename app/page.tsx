@@ -58,7 +58,7 @@ const staggerContainer: Variants = {
     transition: { 
       staggerChildren: 0.15, 
       delayChildren: 0.2 
-    } 
+    } as const 
   }
 };
 
@@ -68,7 +68,7 @@ const scaleUp: Variants = {
     scale: 1, 
     opacity: 1, 
     transition: { 
-      type: "spring", 
+      type: "spring" as const,
       stiffness: 200, 
       damping: 10 
     } 
