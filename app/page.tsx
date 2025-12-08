@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Terminal, Send, Check, Copy, Sparkles, Code2, Cpu, Moon, Sun, ArrowUpRight, X, Download, Github, Linkedin, Twitter, Zap, Layout, User, StopCircle, AlertCircle, FileText, MessageSquare, RotateCcw, Share2, Clock, Maximize2, Minimize2, Command } from 'lucide-react';
-import { motion, AnimatePresence ,Variants } from 'framer-motion';
+import { Terminal, Send, Check, Copy, Sparkles, Code2, Cpu, Moon, Sun, ArrowUpRight, X, Download, Github, Linkedin, Twitter, Zap, Layout, User, StopCircle, AlertCircle, FileText, MessageSquare, RotateCcw, Share2, Clock, Maximize2, Minimize2, Command, Trash2 } from 'lucide-react';
+// 1. IMPORT VARIANTS
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 // --- TOAST COMPONENT ---
 const Toast = ({ message, type, onClose }: { message: string; type: 'success' | 'error' | 'info'; onClose: () => void }) => {
@@ -248,23 +249,22 @@ export default function Home() {
     }
   };
 
-  // --- ANIMATIONS ---
-  const fadeInUp = {
+  // --- 2. FIXED: Explicitly typed these as 'Variants' to satisfy TypeScript ---
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", bounce: 0.4, duration: 0.8 } }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
   };
 
-  const scaleUp = {
+  const scaleUp: Variants = {
     hidden: { scale: 0.8, opacity: 0 },
     visible: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 200, damping: 10 } }
   };
 
-  // Helper for scrollbar class
   const scrollbarClass = "overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-gray-400 dark:hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600";
 
   return (
@@ -308,7 +308,7 @@ export default function Home() {
         </div>
       </motion.header>
 
-      {/* MAIN CONTAINER: min-h-0 allows nested flex scrolling to work */}
+      {/* MAIN CONTAINER: FIXED min-h-0 allows nested flex scrolling to work */}
       <div className={`flex-1 flex relative min-h-0 ${isCanvasOpen ? (isFullscreen ? 'pt-0' : 'pt-16') : 'pt-24'}`}>
         
         {/* LEFT PANEL (Input) */}
@@ -524,7 +524,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 dark:text-white">FlocCare.ai</h4>
-                      <p className="text-xs text-gray-500">Built by Nishmith</p>
+                      <p className="text-xs text-gray-500">Built by [Your Name]</p>
                     </div>
                   </div>
                   
@@ -555,7 +555,7 @@ export default function Home() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: "100%", opacity: 0 }}
               transition={{ type: "spring", bounce: 0, duration: 0.6 }}
-              className={`flex-col flex-1 bg-white dark:bg-[#0a0a0a] border-l border-gray-200 dark:border-white/5 h-full relative shadow-2xl overflow-hidden ${mobileTab === 'output' ? 'flex' : 'hidden md:flex'}`}
+              className={`flex-col flex-1 bg-white dark:bg-[#0a0a0a] border-l border-gray-200 dark:border-white/5 h-full relative shadow-2xl ${mobileTab === 'output' ? 'flex' : 'hidden md:flex'}`}
             >
               {/* CANVAS HEADER */}
               <div className="h-14 border-b border-gray-200 dark:border-white/5 flex items-center justify-between px-6 bg-gray-50/50 dark:bg-[#0a0a0a]">
