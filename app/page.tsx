@@ -43,7 +43,11 @@ const fadeInUp: Variants = {
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: spring({ bounce: 0.4, duration: 0.8 })
+    transition: { 
+      type: "spring" as const,
+      bounce: 0.4, 
+      duration: 0.8 
+    } 
   }
 };
 
