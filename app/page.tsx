@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Terminal, Send, Check, Copy, Sparkles, Code2, Cpu, Moon, Sun, ArrowUpRight, X, Download, Github, Linkedin, Twitter, Zap, Layout, User, StopCircle, AlertCircle, FileText, MessageSquare, RotateCcw, Share2, Clock, Maximize2, Minimize2, Command } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence ,Variants } from 'framer-motion';
 
 // --- TOAST COMPONENT ---
 const Toast = ({ message, type, onClose }: { message: string; type: 'success' | 'error' | 'info'; onClose: () => void }) => {
