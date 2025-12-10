@@ -13,8 +13,8 @@ export async function POST(req: Request) {
     if (!prompt) {
       return NextResponse.json({ error: "Topic is required" }, { status: 400 });
     }
-
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-001" });
 
     // 2. Dynamic Temperature (AI Engineering)
     // Professional = Lower temp (more deterministic/factual)
