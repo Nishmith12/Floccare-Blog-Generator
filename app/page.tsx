@@ -10,7 +10,7 @@ const Toast = ({ message, type, onClose }: { message: string; type: 'success' | 
   useEffect(() => {
     const timer = setTimeout(onClose, 3000);
     return () => clearTimeout(timer);
-  }, [onClose]);
+  }, []);
 
   return (
     <motion.div
