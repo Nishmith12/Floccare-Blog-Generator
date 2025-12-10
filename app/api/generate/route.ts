@@ -14,7 +14,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Topic is required" }, { status: 400 });
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // 2. Dynamic Temperature (AI Engineering)
     // Professional = Lower temp (more deterministic/factual)
@@ -66,8 +66,8 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ output: text });
 
-  } catch (error) {
-    console.error("Error:", error);
+  } catch (error: any) {
+    console.error("Generate API error details:", error?.message || error);
     return NextResponse.json({ error: "Failed to generate content" }, { status: 500 });
   }
 }
