@@ -45,3 +45,37 @@
 body {
   @apply antialiased;
 }
+
+:root.dark {
+  color-scheme: dark;
+}
+
+html.light body {
+  background: #fafafa;
+  color: #111827;
+}
+
+html.dark body {
+  background: #050505;
+  color: #e5e7eb;
+}
+
+html {
+  background-color: #fafafa;
+  color: #111827;
+}
+
+html.dark {
+  background-color: #050505;
+  color: #e5e7eb;
+}
+
+/* Make body full-height and inherit */
+html, body {
+  min-height: 100%;
+}
+
+body {
+  @apply antialiased;
+}
+
